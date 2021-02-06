@@ -2,11 +2,14 @@ language: julia
 
 arch:
   - amd64
-  - arm64
+  - arm64-graviton2
+
+virt: lxd
+
+group: edge
 
 os:
   - linux
-  - osx
 
 julia:
   - 0.7
@@ -21,7 +24,7 @@ notifications:
 matrix:
   allow_failures:
     - julia: nightly
-    - arch: arm64
+    - arch: arm64-graviton2
 
 jobs:
   fast_finish: true
